@@ -1,0 +1,87 @@
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/Users/agent_user:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/System/Library/CoreServices:$PATH"
+
+
+# PS1='%F{cyan}%n@%m%f %F{yellow}%~%f ${vcs_info_msg_0_} %# '
+
+export COPILOT_HOME=/Users/august/.copilot   
+
+PROMPT=$'\n%F{yellow}[mac]%f %F{green}%n%f %F{cyan}%~%f %(?..%F{red}[exit %?]%f)\n%# '
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/agent_user/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# precompact-archive cleanup (~/.claude/precompact-archive is not covered by cleanupPeriodDays)
+# alias precompact-prune='find ~/.claude/precompact-archive -name "*.jsonl" -mtime +60 -delete'
+# alias precompact-autoclean='ls -t ~/.claude/precompact-archive/*.jsonl 2>/dev/null | tail -n +101 | xargs -I{} rm -- "{}"'
+
+
+# /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc #in your profile to enable shell command completion for gcloud.
+# /opt/homebrew/share/google-cloud-sdk/path.zsh.inc  #in your profile to add the Google Cloud SDK command line tools to your $PATH.
+
+
+
+agent() {
+    cd /Users/agent_user && sudo -H -u agent_user "$@"
+}
+
+
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
+
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt EXTENDED_HISTORY
+
+
+
+
+# Added by Antigravity CLI installer
+
+
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/agent_user/.local/bin:$PATH"
+
+
+
+# pnpm
+export PNPM_HOME='/Users/agent_user/Library/pnpm'
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="/Users/agent_user/bin:$PATH" ;;
+esac
+# pnpm end
+export GEMINI_API_KEY="AQ.Ab8RN6LZznJmeoFLHB_YuO7wlTCDrCbuldy7aGZuav1CkPVBtQ"
+
+# Created by `pipx` on 2026-09-24 09:57:51
+export PATH="$PATH:/Users/agent_user/.local/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+autoload -U compinit; compinit
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/august/.docker/completions $fpath)
+autoload -Uz compinit
+(( ${+_comps[docker]} )) || compinit
+# End of Docker CLI completions
+
+
+export CLAUDE_CODE_OAUTH_TOKEN=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 
+
+
+alias claude-secure='docker run -it --rm -v "$PWD:/workspace" -v "$HOME/.config/claude-code:/home/claudebot/.config/claude-code" --net=host local-claude-sandbox'

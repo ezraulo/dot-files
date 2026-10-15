@@ -1,0 +1,16 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/august/.docker/bin"
+# End of Docker Desktop section.
+
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/agent_user:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/august/.local/bin:$PATH"
